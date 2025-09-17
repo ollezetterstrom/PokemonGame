@@ -1,0 +1,56 @@
+/* Map styles */
+.game-map {
+    position: relative;
+    margin: 20px auto;
+    background: #2a4b8d;
+    border: 4px solid #3761a8;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.map-container {
+    position: relative;
+    display: grid;
+    gap: 0;
+}
+
+.map-tile {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.tile-grass { background-color: #90EE90; }
+.tile-stone { background-color: #808080; }
+.tile-path { background-color: #DEB887; }
+
+.map-player {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url('/images/player.png') center/contain no-repeat;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.map-dialog {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 80%;
+    z-index: 1000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}

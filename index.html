@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Pokemon Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <h1>🎮 Daily Pokemon Journey</h1>
+            <p>Log in daily to continue your adventure!</p>
+            <div class="login-form">
+                <input type="text" id="usernameInput" placeholder="Enter your trainer name" maxlength="20">
+                <button id="loginBtn" class="btn btn-primary">Start Journey</button>
+            </div>
+            <div class="login-info">
+                <p>💡 Your progress is saved locally</p>
+                <p>🗓️ Log in daily for rewards!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="game-screen hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="trainer-info">
+                <h2 id="trainerName">Trainer</h2>
+                <div class="trainer-stats">
+                    <span>⚡ Energy: <span id="energy">100</span>/100</span>
+                    <span>💰 Coins: <span id="coins">0</span></span>
+                    <span>📅 Day <span id="dayCount">1</span></span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="logoutBtn" class="btn btn-small">Logout</button>
+            </div>
+        </header>
+
+        <!-- Daily Login Reward -->
+        <div id="dailyReward" class="daily-reward hidden">
+            <h3>🎉 Daily Login Reward!</h3>
+            <div class="reward-content">
+                <div class="reward-item">
+                    <span class="reward-icon">⚡</span>
+                    <span>+50 Energy</span>
+                </div>
+                <div class="reward-item">
+                    <span class="reward-icon">💰</span>
+                    <span>+<span id="coinReward">100</span> Coins</span>
+                </div>
+                <div id="specialReward" class="reward-item hidden">
+                    <span class="reward-icon">🥚</span>
+                    <span>New Pokemon Egg!</span>
+                </div>
+            </div>
+            <button id="claimRewardBtn" class="btn btn-primary">Claim Reward</button>
+        </div>
+
+        <!-- Game Map -->
+        <section class="game-map" id="gameMap">
+            <div class="map-container" id="mapContainer"></div>
+            <div class="map-player" id="mapPlayer"></div>
+        </section>
+
+        <!-- Pokemon Team -->
+        <section class="pokemon-team">
+            <h3>🔥 Your Pokemon Team</h3>
+            <div id="pokemonList" class="pokemon-grid">
+                <!-- Pokemon cards will be generated here -->
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="actions">
+            <div class="action-buttons">
+                <button id="exploreBtn" class="btn btn-action">
+                    🗺️ Explore
+                    <small>Find new Pokemon</small>
+                </button>
+                <button id="trainBtn" class="btn btn-action">
+                    💪 Train
+                    <small>Level up Pokemon</small>
+                </button>
+                <button id="battleBtn" class="btn btn-action">
+                    ⚔️ Battle
+                    <small>Fight wild Pokemon</small>
+                </button>
+                <button id="shopBtn" class="btn btn-action">
+                    🏪 Shop
+                    <small>Buy items</small>
+                </button>
+            </div>
+        </section>
+
+        <!-- Activity Log -->
+        <section class="activity-log">
+            <h3>📋 Activity Log</h3>
+            <div id="activityList" class="activity-list">
+                <!-- Activity items will be added here -->
+            </div>
+        </section>
+
+        <!-- Shop Modal -->
+        <div id="shopModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🏪 Pokemon Shop</h3>
+                    <button id="closeShop" class="btn btn-small">×</button>
+                </div>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span>🥚 Pokemon Egg</span>
+                        <button class="btn btn-small" data-item="egg" data-cost="500">500 💰</button>
+                    </div>
+                    <div class="shop-item">
+                        <span>⚡ Energy Potion</span>
+                        <button class="btn btn-small" data-item="energy" data-cost="50">50 💰</button>
+                    </div>
+                    <div class="shop-item">
+                        <span>💊 Rare Candy</span>
+                        <button class="btn btn-small" data-item="candy" data-cost="1000">1000 💰</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle Modal -->
+        <div id="battleModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>⚔️ Wild Pokemon Battle</h3>
+                </div>
+                <div class="battle-scene">
+                    <div class="enemy-pokemon">
+                        <div id="enemySprite" class="pokemon-sprite large">🔥</div>
+                        <div id="enemyName" class="pokemon-name">Wild Charmander</div>
+                        <div class="hp-bar">
+                            <div id="enemyHp" class="hp-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="vs-text">VS</div>
+                    <div class="player-pokemon">
+                        <div id="playerSprite" class="pokemon-sprite large">💧</div>
+                        <div id="playerName" class="pokemon-name">Your Squirtle</div>
+                        <div class="hp-bar">
+                            <div id="playerHp" class="hp-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="battle-actions">
+                    <button id="attackBtn" class="btn btn-action">⚔️ Attack</button>
+                    <button id="runBtn" class="btn btn-action">🏃 Run</button>
+                </div>
+                <div id="battleLog" class="battle-log"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

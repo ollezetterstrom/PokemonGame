@@ -1,0 +1,6 @@
+More tile types with unique behaviors
+Different encounter tables for different areas
+NPCs with dialog and quests
+Items that can be picked up
+Weather effects that influence encounters
+Special events or triggers in certain map locations
