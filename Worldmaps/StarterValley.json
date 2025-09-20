@@ -67,6 +67,10 @@
      "5": { "name": "Sign", "walkable": false, "color": "brown", "sprite": "sign.png",
         "onInteract": "showDialog",
         "dialogText": "I heard there is a special Berry tree nearby..."
+    },
+    "6": { "name": "Stardust", "walkable": false, "color": "yellow", "sprite": "stardust.png",
+        "onInteract": "foundStardust",
+        "dialogText": "You found a Stardust crystal! It crumbles to dust, but you feel a little more sparkly."
     }
   },
     "encounters": {
