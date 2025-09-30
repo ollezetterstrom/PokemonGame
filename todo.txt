@@ -1,7 +1,7 @@
-More tile types with unique behaviors
-Different encounter tables for different areas
-NPCs with dialog and quests
-Items that can be picked up
-Weather effects that influence encounters
-Special events or triggers in certain map locations
-Player-vs-player battles
+Fler bricktyper med unika beteenden
+Olika mötestabeller för olika områden
+NPC:er med dialog och uppdrag
+Saker som kan hämtas
+Vädereffekter som påverkar möten
+Särskilda händelser eller utlösare på vissa kartplatser
+Spelare-mot-spelare-strider
